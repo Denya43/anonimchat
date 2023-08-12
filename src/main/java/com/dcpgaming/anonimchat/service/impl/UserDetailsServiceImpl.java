@@ -1,7 +1,8 @@
-package com.anonimchat.dao;
+package com.dcpgaming.anonimchat.service.impl;
 
-import com.anonimchat.model.Role;
-import com.anonimchat.model.User;
+import com.dcpgaming.anonimchat.model.Role;
+import com.dcpgaming.anonimchat.model.User;
+import com.dcpgaming.anonimchat.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

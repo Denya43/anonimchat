@@ -1,4 +1,4 @@
-package com.anonimchat.model;
+package com.dcpgaming.anonimchat.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
