@@ -11,11 +11,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
-
+//write websocket configuration here
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
-
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/topic");
@@ -25,10 +24,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat")
-                .setAllowedOrigins("http://localhost:8080") // Allow connections from your frontend domain
+                .setAllowedOrigins("http://127.0.0.1:8080") // Allow connections from your frontend domain
                 .withSockJS();
     }
 
+    //write cors filter here to allow cross origin requests
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -39,7 +39,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         source.registerCorsConfiguration("/chat/**", config); // Adjust the path as needed
         return new CorsFilter(source);
     }
-
 }
 
 

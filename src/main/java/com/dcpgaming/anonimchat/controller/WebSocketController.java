@@ -12,7 +12,6 @@ public class WebSocketController {
     @SendTo("/topic/chat") // Broadcasting the message to all subscribers of this topic
     public MessageDTO sendMessage(MessageDTO message) {
         // Process the message, update database, etc.
-        return message;
+        return new MessageDTO("Hello, " + message.getSender() + "!"); // Return the message object
     }
 }
-
